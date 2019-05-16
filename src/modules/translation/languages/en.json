@@ -10,7 +10,8 @@
   },
   "banners": {
     "contest_winners": "The Creator Contest has ended! See the winners {link}.",
-    "contest_winners_link": "https://contest.decentraland.org/en"
+    "contest_winners_link": "https://contest.decentraland.org/en",
+    "zone_deprecation": "All Builder users will be migrated to builder.decentraland.org on 31 May 2019 at 00:00:00 UTC.{br}Any scenes you have created on kr.builder.decentraland.org or builder.decentraland.zone will be permanently deleted. Please download any scenes you want to save. {link}"
   },
   "contest": {
     "banner": {

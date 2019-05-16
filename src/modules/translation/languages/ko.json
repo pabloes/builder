@@ -10,7 +10,8 @@
   },
   "banners": {
     "contest_winners": "{link} 우승작들을 확인해보시기 바랍니다.",
-    "contest_winners_link": "https://contest.decentraland.org/ko"
+    "contest_winners_link": "https://contest.decentraland.org/ko",
+    "zone_deprecation": "모든 빌더 사용자는 UTC 00:00:00에 2019 년 5 월 31 일에 builder.decentral and.org로 마이그레이션됩니다. kr.builder.decentraland.org 또는 builder.decentraland.zone에서 작성한 모든 장면은 영구적으로 삭제됩니다. 저장하고 싶은 장면을 다운로드하십시오. {link}"
   },
   "contest": {
     "banner": {

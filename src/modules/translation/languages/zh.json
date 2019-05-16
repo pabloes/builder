@@ -10,7 +10,8 @@
   },
   "banners": {
     "contest_winners": "创作大赛已经结束，请在{link}查看中奖名单",
-    "contest_winners_link": "https://contest.decentraland.org/zh"
+    "contest_winners_link": "https://contest.decentraland.org/zh",
+    "zone_deprecation": "所有内容编辑器用户将于2019年5月31日 00:00:00 UTC 迁移到 builder.decentraland.org。{br}在 kr.builder.decentraland.org 或 builder.decentraland.zone 上创建的任何场景都将被永久删除。 请先下载您要保存的任何场景。{link}"
   },
   "contest": {
     "banner": {

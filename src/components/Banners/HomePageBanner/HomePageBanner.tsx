@@ -17,18 +17,19 @@ export default class HomePageBanner extends React.PureComponent<Props> {
     }
 
     return (
-      <Banner className={classes} name="builder-contest-winners" isClosable>
+      <Banner className={classes} name="builder-zone-deprecation">
         <div className="orange" />
         <div className="purple" />
         <span className="text">
           <T
-            id="banners.contest_winners"
+            id="banners.zone_deprecation"
             values={{
               link: (
                 <a href={t('banners.contest_winners_link')} rel="noopener noreferrer" target="_blank">
-                  {t('global.here')}
+                  {t('global.learn_more')}
                 </a>
-              )
+              ),
+              br: <br />
             }}
           />
         </span>

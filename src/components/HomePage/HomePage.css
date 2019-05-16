@@ -86,8 +86,11 @@
 }
 
 .home-page-banner {
-  height: 80px;
-  padding: 0px;
+  padding: 24px 24px;
+}
+
+.home-page-banner .text {
+  margin: 0px 300px;
 }
 
 .home-page-divider {
