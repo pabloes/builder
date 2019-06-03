@@ -27,9 +27,6 @@ export default class HomePageHero extends React.PureComponent<Props> {
           </span>
         </Hero.Description>
         <Hero.Actions>
-          <Button primary onClick={this.handleStart}>
-            {t('home_page.start')}
-          </Button>
           <Button className="hollow" onClick={this.handleWatchVideo}>
             {t('global.learn_more')}
           </Button>

@@ -5,8 +5,6 @@ import { Container, Button } from 'decentraland-ui'
 import HomePageBanner from 'components/Banners/HomePageBanner'
 import HomePageHero from 'components/HomePageHero'
 import ProjectCard from 'components/ProjectCard'
-import TemplateCard from 'components/TemplateCard'
-import { getTemplates } from 'modules/template/utils'
 import { Template } from 'modules/template/types'
 import Icon from 'components/Icon'
 
@@ -56,9 +54,8 @@ export default class HomePage extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const { isAnimationPlaying } = this.state
     const projects = Object.values(this.props.projects)
-    const templates = getTemplates()
+
     return (
       <>
         {!projects.length ? (
@@ -84,23 +81,6 @@ export default class HomePage extends React.PureComponent<Props, State> {
                 </div>
               </div>
             )}
-
-            <div id="template-cards" className={'template-cards' + (isAnimationPlaying ? ' animate' : '')}>
-              <div className="subtitle">
-                {t('home_page.templates_title')}
-                {!projects.length && this.renderImportButton()}
-              </div>
-              <div className="template-list">
-                <div className="template-row">
-                  <TemplateCard template={templates[0]} onClick={this.handleTemplateClick} />
-                  <TemplateCard template={templates[1]} onClick={this.handleTemplateClick} />
-                </div>
-                <div className="template-row">
-                  <TemplateCard template={templates[2]} onClick={this.handleTemplateClick} />
-                  <TemplateCard template={templates[3]} onClick={this.handleTemplateClick} />
-                </div>
-              </div>
-            </div>
           </div>
         </Container>
       </>

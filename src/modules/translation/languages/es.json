@@ -10,8 +10,8 @@
   },
   "banners": {
     "contest_winners": "¡El concurso ha terminado! Descubre los ganadores {link}.",
-    "contest_winners_link": "https://contest.decentraland.org/es",
-    "zone_deprecation": "Todos los usuarios del Builder serán migrados a builder.decentraland.org el 31 de Mayo del 2019 a las 00:00:00 UTC. {br}Todas las escenas creadas en kr.builder.decentraland.org o builder.decentraland.zone serán eliminadas. Por favor descarga todas las escenas que quieras guardar. {link}"
+    "contest_winners_link": "https://decentraland.org/blog/project-updates/builder-scene-migration",
+    "zone_deprecation": "Todos los usuarios del Builder serán migrados a builder.decentraland.org el 17 de Junio de 2019 a las 00:00:00 hora UTC. Las escenas que hayan sido creadas en kr.builder.decentraland.org o en builder.decentraland.zone serán eliminadas de forma permanente. Por favor descarga las escenas que quieras guardar. {link}"
   },
   "contest": {
     "banner": {
