@@ -68,10 +68,7 @@ export default class HomePage extends React.PureComponent<Props, State> {
           <div className="HomePage">
             {projects.length > 0 && (
               <div className="project-cards">
-                <div className="subtitle">
-                  {t('home_page.projects_title')}
-                  {this.renderImportButton()}
-                </div>
+                <div className="subtitle">{t('home_page.projects_title')}</div>
                 <div className="CardList">
                   {projects
                     .sort(project => -project.createdAt)
