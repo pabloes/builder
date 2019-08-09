@@ -20,7 +20,8 @@ export const COLLECTIBLE_WHITELIST = [
   'chainbreakers-pets',
   'chainbreakers-units',
   'chainbreakers-rings',
-  'chainguardians'
+  'chainguardians',
+  'cryptomorph'
 ]
 
 export function* assetSaga() {
