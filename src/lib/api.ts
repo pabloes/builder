@@ -14,6 +14,7 @@ export const DAR_URL = env.get('REACT_APP_DAR_URL', '')
 export const BUILDER_SERVER_URL = env.get('REACT_APP_BUILDER_SERVER_URL', '')
 export const CONTENT_SERVER_URL = env.get('REACT_APP_CONTENT_SERVER_URL', '')
 export const MARKETPLACE_URL = env.get('REACT_APP_MARKETPLACE_URL', '')
+export const ASSETS_CONTENT_URL = env.get('REACT_APP_ASSETS_CONTENT_URL', '')
 
 export enum EMAIL_INTEREST {
   MOBILE = 'builder-app-mobile',

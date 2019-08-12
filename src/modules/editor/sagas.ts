@@ -51,7 +51,7 @@ import {
   setGround,
   fixCurrentScene
 } from 'modules/scene/actions'
-import { CONTENT_SERVER_URL } from 'lib/api'
+import { ASSETS_CONTENT_URL } from 'lib/api'
 import { bindKeyboardShortcuts, unbindKeyboardShortcuts } from 'modules/keyboard/actions'
 import { editProjectThumbnail } from 'modules/project/actions'
 import { getCurrentScene, getEntityComponentByType, getCurrentMetrics } from 'modules/scene/selectors'
@@ -388,7 +388,7 @@ function* handlePrefetchAsset(action: PrefetchAssetAction) {
 
     for (let [file, hash] of contentEntries) {
       if (file.endsWith('.png') || file.endsWith('.glb') || file.endsWith('.gltf')) {
-        editorWindow.editor.preloadFile(`${CONTENT_SERVER_URL}/contents/${hash}`)
+        editorWindow.editor.preloadFile(`${ASSETS_CONTENT_URL}/${hash}`)
       }
     }
   })

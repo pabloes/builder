@@ -1,4 +1,4 @@
-import { CONTENT_SERVER_URL } from 'lib/api'
+import { ASSETS_CONTENT_URL } from 'lib/api'
 import { EditorScene } from 'modules/editor/types'
 import { Project } from 'modules/project/types'
 const script = require('raw-loader!../../ecsScene/scene.js')
@@ -13,7 +13,7 @@ export function getNewScene(project: Project): EditorScene {
   }
 
   return {
-    baseUrl: `${CONTENT_SERVER_URL}/contents/` as string,
+    baseUrl: `${ASSETS_CONTENT_URL}/` as string,
     display: {
       title: project.title
     },
