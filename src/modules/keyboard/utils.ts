@@ -45,6 +45,7 @@ export const getQwertyLayout = (): ShortcutLayout => ({
   [Shortcut.DUPLICATE_ITEM]: { type: 'simple', value: 'd', title: t('shortcuts.duplicate') },
   [Shortcut.PREVIEW]: { type: 'simple', value: 'i', title: t('shortcuts.preview') },
   [Shortcut.TOGGLE_SIDEBAR]: { type: 'simple', value: 'p', title: t('shortcuts.toggle_sidebar') },
+  [Shortcut.TOGGLE_BLOCKLY]: { type: 'simple', value: 'b', title: t('shortcuts.toggle_blockly') },
   [Shortcut.DELETE_ITEM]: {
     type: 'alternative',
     value: [{ type: 'simple', value: SpecialKeys.DELETE, title: null }, { type: 'simple', value: SpecialKeys.BACKSPACE, title: null }],

@@ -14,6 +14,7 @@ import { ToolName } from './Tools/Tools.types'
 import { Props, State } from './EditorPage.types'
 
 import './EditorPage.css'
+import BlocklySidebar from 'components/BlocklySidebar'
 
 export const LOCALSTORAGE_TUTORIAL_KEY = 'builder-tutorial'
 export const LOCALSTORAGE_INCENTIVE_BANNER_KEY = 'builder-incentive-banner'
@@ -68,7 +69,7 @@ export default class EditorPage extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const { currentProject, isPreviewing, isSidebarOpen, isLoading } = this.props
+    const { currentProject, isPreviewing, isSidebarOpen, isLoading, isBlocklyOpen } = this.props
     const gridClasses = isPreviewing ? 'fullscreen' : 'horizontal-layout'
     const toolbarClasses = isSidebarOpen ? 'toolbar open' : 'toolbar'
     let wrapperClasses = 'wrapper'
@@ -98,6 +99,7 @@ export default class EditorPage extends React.PureComponent<Props, State> {
               </div>
             )}
             {isPreviewing || !isSidebarOpen ? null : <SideBar />}
+            {isPreviewing || !isBlocklyOpen ? null : <BlocklySidebar />}
           </Grid.Row>
         </Grid>
       </div>

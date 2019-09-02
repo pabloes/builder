@@ -9,7 +9,9 @@ import {
   SetGizmoAction,
   TogglePreviewAction,
   ToggleSidebarAction,
-  EditorUndoAction
+  EditorUndoAction,
+  toggleBlockly,
+  ToggleBlocklyAction
 } from 'modules/editor/actions'
 import { resetItem, duplicateItem, deleteItem, ResetItemAction, DuplicateItemAction, DeleteItemAction } from 'modules/scene/actions'
 import { openModal, OpenModalAction } from 'modules/modal/actions'
@@ -23,10 +25,12 @@ export type Props = {
   isLoading: boolean
   isPreviewing: boolean
   isSidebarOpen: boolean
+  isBlocklyOpen: boolean
   enabledTools: Record<string, boolean>
   onSetGizmo: typeof setGizmo
   onTogglePreview: typeof togglePreview
   onToggleSidebar: typeof toggleSidebar
+  onToggleBlockly: typeof toggleBlockly
   onReset: typeof resetItem
   onDuplicate: typeof duplicateItem
   onDelete: typeof deleteItem
@@ -35,17 +39,18 @@ export type Props = {
 
 export type MapStateProps = Pick<
   Props,
-  'gizmo' | 'currentProject' | 'metrics' | 'isLoading' | 'isPreviewing' | 'isSidebarOpen' | 'selectedEntityId' | 'enabledTools'
+  'gizmo' | 'currentProject' | 'metrics' | 'isLoading' | 'isPreviewing' | 'isSidebarOpen' | 'isBlocklyOpen' | 'selectedEntityId' | 'enabledTools'
 >
 
 export type MapDispatchProps = Pick<
   Props,
-  'onSetGizmo' | 'onTogglePreview' | 'onToggleSidebar' | 'onReset' | 'onDuplicate' | 'onDelete' | 'onOpenModal'
+  'onSetGizmo' | 'onTogglePreview' | 'onToggleBlockly' | 'onToggleSidebar' | 'onReset' | 'onDuplicate' | 'onDelete' | 'onOpenModal'
 >
 export type MapDispatch = Dispatch<
   | SetGizmoAction
   | TogglePreviewAction
   | ToggleSidebarAction
+  | ToggleBlocklyAction
   | EditorUndoAction
   | ResetItemAction
   | DuplicateItemAction

@@ -19,6 +19,10 @@
   /* Editor page Banner */
   --incentive-banner-height: 40px;
 
+  /* Blockly */
+  --blockly-width: 1120px;
+  --bottom-toolbar-height: 60px;
+
   /* SideBar */
   --sidebar-width: 370px;
   --sidebar-heading: rgba(255, 255, 255, 0.9);

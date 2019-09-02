@@ -300,6 +300,11 @@ module.exports = function(webpackEnv) {
                 name: 'static/media/[name].[hash:8].[ext]'
               }
             },
+            // "raw" loader for xml files (used for Blockly)
+            {
+              test: [/\.xml$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+              loader: require.resolve('raw-loader'),
+            },
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {

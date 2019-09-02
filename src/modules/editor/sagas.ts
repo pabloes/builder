@@ -39,6 +39,8 @@ import {
   SetEditorReadyAction,
   setEntitiesOutOfBoundaries,
   setEditorLoading,
+  TOGGLE_BLOCKLY,
+  ToggleBlocklyAction,
   closeEditor
 } from 'modules/editor/actions'
 import {
@@ -83,6 +85,7 @@ export function* editorSaga() {
   yield takeLatest(SET_GIZMO, handleSetGizmo)
   yield takeLatest(TOGGLE_PREVIEW, handleTogglePreview)
   yield takeLatest(TOGGLE_SIDEBAR, handleToggleSidebar)
+  yield takeLatest(TOGGLE_BLOCKLY, handleToggleBlockly)
   yield takeLatest(ZOOM_IN, handleZoomIn)
   yield takeLatest(ZOOM_OUT, handleZoomOut)
   yield takeLatest(RESET_CAMERA, handleResetCamera)
@@ -291,6 +294,11 @@ function* handleToggleSidebar(_: ToggleSidebarAction) {
   yield call(() => resizeEditor())
 }
 
+function* handleToggleBlockly(_: ToggleBlocklyAction) {
+  yield call(() => resizeEditor())
+  yield call(() => openBlockly())
+}
+
 function handleZoomIn() {
   editorWindow.editor.setCameraZoomDelta(-5)
 }
@@ -397,4 +405,9 @@ function* handlePrefetchAsset(action: PrefetchAssetAction) {
 function handleEntitiesOutOfBoundaries(args: { entities: string[] }) {
   const { entities } = args
   store.dispatch(setEntitiesOutOfBoundaries(entities))
+}
+
+function openBlockly() {
+  const state = store.getState() as RootState
+  console.log(state.project.data)
 }

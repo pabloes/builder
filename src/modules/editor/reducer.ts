@@ -20,7 +20,9 @@ import {
   SetExportProgressAction,
   SET_EXPORT_PROGRESS,
   SET_EDITOR_LOADING,
-  SetEditorLoadingAction
+  SetEditorLoadingAction,
+  ToggleBlocklyAction,
+  TOGGLE_BLOCKLY
 } from './actions'
 import { Gizmo } from './types'
 import { DELETE_ITEM, DeleteItemAction } from 'modules/scene/actions'
@@ -35,6 +37,7 @@ export type EditorState = {
   gizmo: Gizmo
   preview: boolean
   sidebar: boolean
+  blockly: boolean
   snapToGrid: boolean
   selectedEntityId: string | null
   entitiesOutOfBoundaries: string[]
@@ -50,7 +53,8 @@ export type EditorState = {
 const INITIAL_STATE: EditorState = {
   gizmo: Gizmo.NONE,
   preview: false,
-  sidebar: true,
+  sidebar: false,
+  blockly: true,
   snapToGrid: true,
   selectedEntityId: null,
   entitiesOutOfBoundaries: [],
@@ -67,6 +71,7 @@ export type EditorReducerAction =
   | SetGizmoAction
   | TogglePreviewAction
   | ToggleSidebarAction
+  | ToggleBlocklyAction
   | SelectEntityAction
   | DeselectEntityAction
   | SetEditorReadyAction
@@ -93,6 +98,13 @@ export const editorReducer = (state = INITIAL_STATE, action: EditorReducerAction
       return {
         ...state,
         preview: enabled
+      }
+    }
+    case TOGGLE_BLOCKLY: {
+      const { isEnabled: enabled } = action.payload
+      return {
+        ...state,
+        blockly: enabled
       }
     }
     case TOGGLE_SIDEBAR: {

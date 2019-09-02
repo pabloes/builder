@@ -1,0 +1,11 @@
+.BlocklyBuilder {
+  width: var(--blockly-width);
+  background: var(--void);
+  padding: 17px 20px 0px 16px;
+  height: 100%;
+  color: #2f2f2f;
+}
+
+.BlocklyBuilder #blocklyDiv {
+  height: calc(100vh - var(--bottom-toolbar-height) * 2 );
+}

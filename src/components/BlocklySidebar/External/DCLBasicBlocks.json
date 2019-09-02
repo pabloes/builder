@@ -1,0 +1,177 @@
+[{
+  "type": "vector3",
+  "message0": "Vector3 %1 x %2 y %3 z %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "x",
+      "check": "Number",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "y",
+      "check": "Number",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "z",
+      "check": "Number",
+      "align": "RIGHT"
+    }
+  ],
+  "output": "Vector3",
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "entity",
+  "message0": "Scene Item %1 %2 Id %3 Components %4",
+  "args0": [
+    {
+      "type": "field_image",
+      "src": "https://docs.decentraland.org/images/logo.svg",
+      "width": 20,
+      "height": 20,
+      "alt": "Scene Item",
+      "flipRtl": false
+    },
+    {
+      "type": "input_dummy",
+      "align": "CENTRE"
+    },
+    {
+      "type": "input_value",
+      "name": "NAME",
+      "check": "String",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "Components",
+      "check": "ComponentArray",
+      "align": "RIGHT"
+    }
+  ],
+  "output": "EntityId",
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "transformcomponent",
+  "message0": "Transform %1 Position %2 Rotation %3 Scale %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "Position",
+      "check": "Vector3",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "Rotation",
+      "check": "Vector3",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "Scale",
+      "check": "Number",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 135,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "component_array",
+  "message0": "Components %1 %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "inputsInline": true,
+  "output": "ComponentArray",
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "transform_component",
+  "message0": "Transform %1 Position %2 Rotation %3 Scale %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "Position",
+      "check": "Vector3",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "Rotation",
+      "check": "Vector3",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "Scale",
+      "check": "Number",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 135,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "gltfshape",
+  "message0": "GLTFShape %1 Source %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "src",
+      "check": "String",
+      "align": "RIGHT"
+    }
+  ],
+  "previousStatement": null,
+  "colour": 135,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "cube_shape",
+  "message0": "Cube Shape",
+  "inputsInline": false,
+  "previousStatement": null,
+  "colour": 135,
+  "tooltip": "",
+  "helpUrl": ""
+}]

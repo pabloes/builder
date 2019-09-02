@@ -17,6 +17,7 @@ import { deploymentSaga } from 'modules/deployment/sagas'
 import { mediaSaga } from 'modules/media/sagas'
 import { authSaga } from 'modules/auth/sagas'
 import { locationSaga } from 'modules/location/sagas'
+import { blocklySaga } from 'modules/blockly/sagas'
 
 export function* rootSaga() {
   yield all([
@@ -26,6 +27,7 @@ export function* rootSaga() {
     translationSaga(),
     walletSaga(),
     assetPackSaga(),
+    blocklySaga(),
     modalSaga(),
     sceneSaga(),
     projectSaga(),

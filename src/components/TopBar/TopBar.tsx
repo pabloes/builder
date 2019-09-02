@@ -27,6 +27,15 @@ export default class TopBar extends React.PureComponent<Props> {
     onSetGizmo(gizmo === Gizmo.ROTATE ? Gizmo.NONE : Gizmo.ROTATE)
   }
 
+  handleToggleBlockly = () => {
+    const { onToggleBlockly, isBlocklyOpen, isSidebarOpen, onToggleSidebar } = this.props
+    widget.unmount()
+    if (!isBlocklyOpen && isSidebarOpen) {
+      onToggleSidebar(false)
+    }
+    onToggleBlockly(!isBlocklyOpen)
+  }
+
   handleTogglePreview = () => {
     const { onTogglePreview, isPreviewing } = this.props
     widget.unmount()
@@ -34,7 +43,10 @@ export default class TopBar extends React.PureComponent<Props> {
   }
 
   handleToggleSidebar = () => {
-    const { onToggleSidebar, isSidebarOpen } = this.props
+    const { onToggleSidebar, isSidebarOpen, isBlocklyOpen, onToggleBlockly } = this.props
+    if (!isSidebarOpen && isBlocklyOpen) {
+      onToggleBlockly(false)
+    }
     onToggleSidebar(!isSidebarOpen)
   }
 
@@ -57,6 +69,7 @@ export default class TopBar extends React.PureComponent<Props> {
       currentProject,
       isPreviewing,
       isSidebarOpen,
+      isBlocklyOpen,
       selectedEntityId,
       enabledTools,
       isLoading,
@@ -123,6 +136,9 @@ export default class TopBar extends React.PureComponent<Props> {
             </ShortcutTooltip>
             <ShortcutTooltip shortcut={Shortcut.EXPORT_SCENE} position="bottom center" className="tool" popupClassName="top-bar-popup">
               <Chip icon="export" isDisabled={isLoading} onClick={this.handleExport} />
+            </ShortcutTooltip>
+            <ShortcutTooltip shortcut={Shortcut.TOGGLE_BLOCKLY} position="bottom center" className="tool" popupClassName="top-bar-popup">
+              <Chip icon="sidebar" isActive={isBlocklyOpen} onClick={this.handleToggleBlockly} />
             </ShortcutTooltip>
             <ShortcutTooltip shortcut={Shortcut.TOGGLE_SIDEBAR} position="bottom center" className="tool" popupClassName="top-bar-popup">
               <Chip icon="sidebar" isActive={isSidebarOpen} onClick={this.handleToggleSidebar} />

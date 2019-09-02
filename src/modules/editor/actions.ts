@@ -81,6 +81,14 @@ export const toggleSidebar = (isEnabled: boolean) => action(TOGGLE_SIDEBAR, { is
 
 export type ToggleSidebarAction = ReturnType<typeof toggleSidebar>
 
+// Toggle Blockly
+
+export const TOGGLE_BLOCKLY = 'Toggle blockly'
+
+export const toggleBlockly = (isEnabled: boolean) => action(TOGGLE_BLOCKLY, { isEnabled })
+
+export type ToggleBlocklyAction = ReturnType<typeof toggleBlockly>
+
 // Select Entity
 
 export const SELECT_ENTITY = 'Select entity'

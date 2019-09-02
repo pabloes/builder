@@ -4,7 +4,7 @@ import { getCurrentProject } from 'modules/project/selectors'
 import { loadAssetPacksRequest } from 'modules/assetPack/actions'
 import { RootState } from 'modules/common/types'
 import { closeEditor, zoomIn, zoomOut, resetCamera } from 'modules/editor/actions'
-import { isSidebarOpen, isPreviewing, isReady } from 'modules/editor/selectors'
+import { isSidebarOpen, isPreviewing, isReady, isBlocklyOpen } from 'modules/editor/selectors'
 import { loadCollectiblesRequest } from 'modules/asset/actions'
 import { openModal } from 'modules/modal/actions'
 import { MapStateProps, MapDispatch, MapDispatchProps } from './EditorPage.types'
@@ -13,6 +13,7 @@ import EditorPage from './EditorPage'
 const mapState = (state: RootState): MapStateProps => ({
   isPreviewing: isPreviewing(state),
   isSidebarOpen: isSidebarOpen(state),
+  isBlocklyOpen: isBlocklyOpen(state),
   isLoading: !isReady(state),
   currentProject: getCurrentProject(state)
 })

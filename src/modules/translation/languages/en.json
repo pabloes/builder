@@ -254,6 +254,7 @@
     "shortcut_reference": "Shortcut reference",
     "toggle_colliders": "Show colliders",
     "toggle_sidebar": "Toggle sidebar",
+    "toggle_blockly": "Toggle blockly",
     "undo": "Undo",
     "zoom_in": "Zoom in",
     "zoom_out": "Zoom out"
