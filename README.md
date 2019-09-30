@@ -17,6 +17,17 @@ After that, to run this app you have two options:
 
 For more information, check the [create-react-app](https://github.com/facebook/create-react-app) repo.
 
+## Dependencies
+
+As noted above, the builder depends on a few external services to run all of it's features. These are:
+- [Builder server](https://github.com/decentraland/builder-server): Holds the default asset packs and stores the custom asset and asset packs the user creates
+- [Profile server](https://github.com/decentraland/platform-profile): Handles the login information
+- [DAR](https://github.com/decentraland/nft-schema-api): API that proxies OpenSea, used to place NFT collectibles you own (via your wallet) on your scene
+- [Content server](https://github.com/decentraland/content-service): Stores the assets once published to a LAND
+- [Marketplace](https://github.com/decentraland/marketplace): We use the Marketplace API to fetch LANDs and Estates an address owns
+
+Below, you'll find an example `.env` file which holds values for most of these, but the only hard dependency the project has is the [Builder server](https://github.com/decentraland/builder-server). Without it you won't find any assets to place in your scene.
+
 ## Environment
 
 This project depends on a few environment variables to work, as well as external services for some features.
@@ -35,18 +46,11 @@ Here are the basic requirements to run the project:
 
 NODE_PATH=src
 
-REACT_APP_ASSETS_URL=https://builder-packs-prod.now.sh
-REACT_APP_CONTENT_SERVER_URL=https://content.decentraland.org
-REACT_APP_DAR_URL=https://schema-api-staging.now.sh/dar
 REACT_APP_BUILDER_SERVER_URL=https://builder-api.decentraland.org/v1
+REACT_APP_CONTENT_SERVER_URL=https://content.decentraland.today
+REACT_APP_DAR_URL=https://schema-api-staging.now.sh/dar
 REACT_APP_MARKETPLACE_URL=https://api.decentraland.org/v1
 REACT_APP_PROFILE_API_URL=https://profile.decentraland.org/api/v1
-
-# Third party
-
-REACT_APP_SEGMENT_API_KEY=
-REACT_APP_INTERCOM_APP_ID=
-REACT_APP_ROLLBAR_ACCESS_TOKEN=
 
 # Contracts
 
@@ -115,4 +119,4 @@ thumbnail for display in the asset drawer.
 
 ## Content server
 
-As noted above, the content server holds the actual assets, which might be comprised of `.glb` and `.png` files. This server is found on the `REACT_APP_CONTENT_SERVER_URL` environment variable.
+As noted above, the content server holds the actual assets once published, which might be comprised of `.glb` and `.png` files. This server is found on the `REACT_APP_CONTENT_SERVER_URL` environment variable.
